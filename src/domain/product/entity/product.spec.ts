@@ -52,6 +52,17 @@ describe("Product unit tests", () => {
     );
   });
 
+  it("should clear notification errors once the entity is valid again", () => {
+    const product = new Product("123", "Product 1", 100);
+
+    product.changeName("");
+    expect(product.notification.hasErrors()).toBe(true);
+
+    product.changeName("Product 2");
+    expect(product.notification.hasErrors()).toBe(false);
+    expect(product.notification.getErrors()).toEqual([]);
+  });
+
   it("should change name", () => {
     const product = new Product("123", "Product 1", 100);
     product.changeName("Product 2");
