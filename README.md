@@ -21,6 +21,16 @@ Para rodar só os testes de Product:
 npx jest src/domain/product
 ```
 
+## Validar no navegador (opcional)
+
+```bash
+npm run dev
+```
+
+Abrir http://localhost:3000. Form: deixe **Name vazio** e **Price negativo** → a página mostra **os dois erros juntos** (`product: Name is required` e `product: Price must be greater than zero`).
+
+Endpoint: `POST /product` → `201` com o produto, ou `400` com `{ "errors": [...] }`.
+
 ## O que mudou
 
 - `Product` e `ProductB` agora estendem `Entity` (herdam `notification`) e, em vez de lançar `Error` na primeira regra quebrada, **acumulam** os erros na notificação.
