@@ -1,0 +1,45 @@
+Título: Clean Architecture: Notification Pattern na Entidade Product
+
+Objetivo Neste desafio, você deve refatorar a validação da entidade Product para utilizar o Notification Pattern. O objetivo é substituir o lançamento imediato de exceções (que interrompem o fluxo) por um "container acumulador de erros", permitindo que a aplicação identifique e reporte todas as inconsistências de uma única vez.
+
+Tecnologias e Ferramentas
+
+Linguagem: TypeScript
+
+Padrão: Notification Pattern
+
+Testes: Unitários (Jest ou similar)
+
+Base do Projeto: Repositório Template (Obrigatório)
+
+Estrutura Base (Obrigatória) Para realizar este desafio, é obrigatório utilizar o código base disponibilizado pelo curso.
+
+https://github.com/devfullcycle/fc-clean-architecture.git
+
+Requisitos Técnicos
+Refatoração: Modifique a classe Product (e suas validações) para que ela utilize o padrão Notification.
+
+Ao invés de lançar um Error imediatamente quando uma regra é quebrada, a entidade deve adicionar o erro à notificação.
+A entidade só deve ser considerada inválida se houver erros na notificação.
+Validação: Garanta que todas as regras de negócio atuais da entidade continuem sendo verificadas.
+
+
+
+Critérios de Testes (Obrigatório) Você deve criar ou adaptar os testes automatizados para validar o novo comportamento.
+
+Teste de Múltiplos Erros: É obrigatório criar um teste específico que force dois erros de validação simultâneos (ex: Name vazio e Price negativo) e verifique se a notificação contém ambos os erros.
+
+Entregável
+
+Link do Repositório: O link para o seu repositório no GitHub contendo o código refatorado e os testes.
+
+README: Instruções de como rodar os testes.
+
+Regras de Entrega
+
+Repositório Único: É obrigatória a entrega de apenas um projeto por repositório.
+
+Branch Principal: Todo o código deve estar na branch main.
+
+Base Obrigatória: Projetos que não utilizarem a estrutura do repositório base fornecido não serão aceitos.
+
